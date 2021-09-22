@@ -1,0 +1,18 @@
+{
+  "name": "diff-editor",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "format": "prettier -w .",
+    "dev": "st -l -d src -i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "2.4.1"
+  },
+  "dependencies": {
+    "st": "^3.0.0"
+  }
+}
