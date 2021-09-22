@@ -1,0 +1,14 @@
+{
+  "env": {
+    "es2020": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": ["prettier", "eslint:recommended"],
+  "plugins": ["import"],
+  "rules": {
+    "import/extensions": ["error", "always"]
+  }
+}
