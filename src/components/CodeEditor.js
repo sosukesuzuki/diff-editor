@@ -10,5 +10,5 @@ const CodeEditorContainer = styled("textarea")`
 `;
 
 export function CodeEditor({ value, onInput }) {
-  return html`<${CodeEditorContainer} value=${value} onInpu=${onInput} />`;
+  return html`<${CodeEditorContainer} value=${value} onInput=${onInput} />`;
 }
