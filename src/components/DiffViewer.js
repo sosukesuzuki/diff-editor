@@ -2,6 +2,12 @@ import { html } from "../html.js";
 import { styled } from "goober";
 
 const DiffViewerContainer = styled("div")`
+  background-color: var(--gray-0);
+  color: var(--gary-9);
+  border: 1px solid var(--gray-4);
+  height: 100%;
+  font-size: 12px;
+  overflow-y: scroll;
   font-family: Menlo, Monaco, "Courier New", monospace, "Segoe UI", Tahoma,
     Geneva, Verdana, sans-serif;
 `;
@@ -25,7 +31,7 @@ export function DiffVieweer({ diffs }) {
       } else if (diff.added) {
         return diff.value
           .split("\n")
-          .map((diffLine) => html`<${AddedLine}>- ${diffLine}<//>`);
+          .map((diffLine) => html`<${AddedLine}>+ ${diffLine}<//>`);
       } else {
         return html`<${DiffLine}>${diff.value}<//>`;
       }

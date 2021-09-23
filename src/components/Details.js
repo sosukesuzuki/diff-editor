@@ -7,6 +7,17 @@ import { useDiffs } from "../hooks/useDiff.js";
 
 const DetailsContainer = styled("div")`
   display: flex;
+  height: 100%;
+`;
+const Column = styled("div")`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  padding: 10px;
+`;
+const ColumnTitle = styled("p")`
+  padding-bottom: 10px;
 `;
 
 export function Details() {
@@ -28,8 +39,17 @@ export function Details() {
   const diffs = useDiffs(originalText, changedText);
 
   return html`<${DetailsContainer}>
-    <${CodeEditor} value=${originalText} onInput=${updateOriginalText} />
-    <${CodeEditor} value=${changedText} onInput=${updateChangedText} />
-    <${DiffVieweer} diffs=${diffs} />
+    <${Column}>
+      <${ColumnTitle}>original text<//>
+      <${CodeEditor} value=${originalText} onInput=${updateOriginalText} />
+    <//>
+    <${Column}>
+      <${ColumnTitle}>changed text<//>
+      <${CodeEditor} value=${changedText} onInput=${updateChangedText} />
+    <//>
+    <${Column}>
+      <${ColumnTitle}>diff<//>
+      <${DiffVieweer} diffs=${diffs} />
+    <//>
   <//>`;
 }
